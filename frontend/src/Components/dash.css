@@ -1,0 +1,290 @@
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --muted: #64748b;
+  --accent: #4f46e5;
+  --danger: #dc2626;
+  --radius: 12px;
+  --gap: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #0f172a;
+}
+
+/* Root Layout */
+.cd-root {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.cd-sidebar {
+  width: 280px;
+  min-width: 220px;
+  background: var(--panel);
+  border-right: 1px solid #e6edf3;
+  display: flex;
+  flex-direction: column;
+}
+
+.cd-side-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #f0f3f6;
+}
+
+.cd-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cd-btn {
+  background: #eef2ff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cd-btn.cd-danger {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.cd-search {
+  padding: 12px;
+  border-bottom: 1px solid #f0f3f6;
+}
+
+.cd-search input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6edf3;
+}
+
+.cd-list {
+  overflow: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cd-chat-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cd-chat-item:hover {
+  background: #fbfdff;
+}
+
+.cd-chat-item.active {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.04);
+}
+
+.cd-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  font-size: 20px;
+}
+
+.cd-chat-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.cd-chat-title {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cd-chat-snippet {
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cd-chat-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.cd-small {
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid #eef2ff;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cd-small.cd-danger {
+  border-color: #fca5a5;
+  color: var(--danger);
+}
+
+.cd-side-footer {
+  padding: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid #f0f3f6;
+}
+
+/* Main */
+.cd-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cd-main-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f3f6;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cd-main-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cd-main-sub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cd-main-controls {
+  display: flex;
+  gap: 8px;
+}
+
+/* Conversation Area */
+.cd-conversation {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+  background: linear-gradient(#fff, #f6f7f9);
+}
+
+.cd-empty {
+  color: var(--muted);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cd-messages {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cd-message {
+  display: flex;
+}
+
+.cd-message.user {
+  justify-content: flex-end;
+}
+
+.cd-message.assistant {
+  justify-content: flex-start;
+}
+
+.cd-message-bubble {
+  max-width: 80%;
+  padding: 14px;
+  border-radius: 16px;
+  background: #eef2ff;
+  color: #0f172a;
+}
+
+.cd-message.user .cd-message-bubble {
+  background: var(--accent);
+  color: #fff;
+}
+
+.cd-message-time {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Composer */
+.cd-composer {
+  padding: 12px 20px;
+  border-top: 1px solid #f0f3f6;
+  background: #fff;
+  display: flex;
+  gap: 12px;
+}
+
+.cd-composer textarea {
+  flex: 1;
+  min-height: 68px;
+  max-height: 240px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e6edf3;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.cd-composer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .cd-sidebar {
+    width: 100px;
+  }
+  .cd-chat-snippet,
+  .cd-chat-title {
+    display: none;
+  }
+  .cd-main-header {
+    padding: 12px;
+  }
+}

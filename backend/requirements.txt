@@ -1,0 +1,13 @@
+pydantic
+requests
+python-dotenv
+fastapi
+langchain
+langchain-core
+langgraph
+langchain-google-genai
+uvicorn
+motor
+mcp[cli]
+mcp-server
+langchain-mcp-adapters
